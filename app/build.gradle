@@ -1,0 +1,40 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.codex.courserecorder'
+    compileSdk 35
+    buildToolsVersion '35.0.0'
+
+    defaultConfig {
+        applicationId 'com.codex.courserecorder'
+        minSdk 29
+        targetSdk 35
+        versionCode 3
+        versionName '1.2.0'
+        testInstrumentationRunner 'com.codex.courserecorder.VideoInspection'
+    }
+
+    buildTypes {
+        release {
+            if (System.getenv('COURSE_SIGNING_PASSWORD')) signingConfig signingConfigs.create('courseRelease') {
+                storeFile rootProject.file('../signing/course-recorder.jks')
+                storePassword System.getenv('COURSE_SIGNING_PASSWORD')
+                keyAlias 'course-recorder'
+                keyPassword System.getenv('COURSE_SIGNING_PASSWORD')
+            }
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.activity:activity:1.10.1'
+}

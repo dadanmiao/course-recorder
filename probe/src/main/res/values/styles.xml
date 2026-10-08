@@ -1,0 +1,9 @@
+<resources>
+    <style name="ProbeTheme" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:colorAccent">#246BFD</item>
+        <item name="android:windowBackground">#F4F7FC</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#14213D</item>
+    </style>
+</resources>

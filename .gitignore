@@ -1,0 +1,26 @@
+# Local Android / Gradle state
+.gradle/
+.idea/
+**/build/
+local.properties
+*.iml
+.DS_Store
+Thumbs.db
+
+# Local signing credentials and secrets
+signing/
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+.env
+.env.*
+
+# Generated packages and recording files (APK downloads live in GitHub Releases)
+*.apk
+*.aab
+*.apks
+*.mp4
+*.log
